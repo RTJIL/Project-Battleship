@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container  {
+  height: 100%;
+  display: flex;
+  gap: clamp(0.5rem, 5vw, 10rem);
+  justify-content: center;
+}
+
+.ai-board,
+.player-board {
+  width: 600px;
+  height: 600px;
+  margin-top: 5rem;
+  outline: 1px solid gray;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 1px;
+}
+
+.cell {
+  outline: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  position: relative;
+}
+
+.ai-board .text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  user-select: none; 
+  pointer-events: none;
+  position: absolute;
+}
+
+.ai-board .cell:hover .text {
+  opacity: 1;
+}
