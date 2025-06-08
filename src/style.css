@@ -7,7 +7,7 @@ body {
 .container  {
   height: 100%;
   display: flex;
-  gap: clamp(0.5rem, 5vw, 10rem);
+  gap: clamp(0.5rem, 2vw, 10rem);
   justify-content: center;
 }
 
@@ -32,7 +32,7 @@ body {
   position: relative;
 }
 
-.ai-board .text {
+.ai-board .text.unhitted {
   opacity: 0;
   transition: opacity 0.3s ease;
   user-select: none; 
@@ -42,4 +42,28 @@ body {
 
 .ai-board .cell:hover .text {
   opacity: 1;
+}
+
+.missed {
+  opacity: 1;
+  user-select: none; 
+  pointer-events: none;
+  position: absolute;
+}
+
+.player-board .text.unhitted {
+  opacity: 0;
+  user-select: none; 
+  pointer-events: none;
+  position: absolute;
+}
+
+.ship-part {
+  background-color: bisque;
+}
+
+.hit {
+  background-color: rgb(233, 79, 68);
+  pointer-events: none;
+  user-select: none; 
 }
