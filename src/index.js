@@ -2,35 +2,33 @@ import './style.css';
 import { Ship } from './Ship';
 import { Gameboard } from './Gameboard';
 import { Player } from './Player';
-import { UIManager } from './UIManager';
+import { Actions } from './Actions';
+import { GameController } from './GameController';
+import { UI } from './UI';
 
-let playerBoard = document.querySelector('.player-board');
+let game = GameController();
 
-for (let i = 0; i < 100; i++) {
-  let cell = document.createElement('div');
-  let x = i % columns;
-  let y = Math.floor(i / columns);
+game.setGame();
 
-  cell.classList.add('cell', `x${x}-y${y}`);
+/* let ui = UI();
 
+async function startGame() {
+  ui.renderUI();
 
-  playerBoard.appendChild(cell);
-}
+  const player = new Player();
+  player.board.setShips();
 
-let aiBoard = document.querySelector('.ai-board');
+  const ai = new Player(true);
+  ai.board.setShips();
 
-for (let i = 0; i < 100; i++) {
-  let cell = document.createElement('div');
+  ui.showPlayerShips(player.board.getShips());
+  ui.showAIShips(ai.board.getShips());
 
-  let x = i % columns;
-  let y = Math.floor(i / columns);
+  // Wait for the render to complete
 
-  cell.classList.add('cell', `x${x}-y${y}`);
+  ui.playerMove(player)
 
-  let text = document.createElement('p');
-  text.classList.add('text');
-  text.textContent = 'X';
+  await ui.aiMove(player, ai);
+} */
 
-  cell.appendChild(text);
-  aiBoard.appendChild(cell);
-}
+startGame();
